@@ -1,1 +1,5 @@
-git-helpers
+![Version](https://img.shields.io/badge/version-0.1-green.svg)
+[![License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat)](LICENSE)
+
+# Introduction
+Common git-related files intended for my projects.
