@@ -16,8 +16,8 @@ jobs:
        script:
          - set -e
 
-         - mkdir build
-         - mkdir CMakeFiles
+         - mkdir build CMakeFiles
+         - touch build/foo.txt CMakeFiles/foo.cmake
          - touch .DS_Store foo.d foo.doxygen.d foo.obj foo.foo.obj
 
          - git ls-files -o -i --exclude-standard > ignored.txt
