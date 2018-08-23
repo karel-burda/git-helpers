@@ -18,5 +18,8 @@ jobs:
 
          - ls -la
          - git status
+         - touch foo.obj
+         - git status
+         - git status --ignored
 
          - set +e
