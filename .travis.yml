@@ -17,8 +17,8 @@ jobs:
          - set -e
 
          - touch foo.obj
-         - git status
-         - git status --ignored
-         - git ls-files -o -i --exclude-standard
+         - git ls-files -o -i --exclude-standard > ignored.txt
+
+         - diff ignored.txt tests/list-of-files-that-should-be-ignored.txt
 
          - set +e
