@@ -16,10 +16,9 @@ jobs:
        script:
          - set -e
 
-         - ls -la
-         - git status
          - touch foo.obj
          - git status
          - git status --ignored
+         - git ls-files -o -i --exclude-standard
 
          - set +e
