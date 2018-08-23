@@ -1,6 +1,11 @@
 stages:
   - test
 
+env:
+  global:
+    - IGNORE_LIST="./ignored.txt"
+    - IGNORE_LIST_REFERENCE="./tests/list-of-files-that-should-be-ignored.txt"
+
 notifications:
   email:
     on_success: never
@@ -20,10 +25,15 @@ jobs:
          - touch build/foo.txt CMakeFiles/foo.cmake
          - touch .DS_Store foo.d foo.doxygen.d foo.obj foo.foo.obj
 
-         - git ls-files -o -i --exclude-standard > ignored.txt
+         - git ls-files -o -i --exclude-standard > $IGNORE_LIST
+         - tr -d '\n' < $IGNORE_LIST
+         - tr -d '\n' < $IGNORE_LIST_REFERENCE
+         - sort -o $IGNORE_LIST $IGNORE_LIST
+         - sort -o $IGNORE_LIST_REFERENCE $IGNORE_LIST_REFERENCE
 
-         - cat ignored.txt
-         - cat tests/list-of-files-that-should-be-ignored.txt
-         - diff ignored.txt tests/list-of-files-that-should-be-ignored.txt
+         - cat $IGNORE_LIST
+         - cat $IGNORE_LIST_REFERENCE
+
+         - diff $IGNORE_LIST $IGNORE_LIST_REFERENCE
 
          - set +e
