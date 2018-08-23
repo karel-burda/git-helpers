@@ -22,6 +22,8 @@ jobs:
 
          - git ls-files -o -i --exclude-standard > ignored.txt
 
+         - cat ignored.txt
+         - cat tests/list-of-files-that-should-be-ignored.txt
          - diff ignored.txt tests/list-of-files-that-should-be-ignored.txt
 
          - set +e
