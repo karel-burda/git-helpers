@@ -16,7 +16,10 @@ jobs:
        script:
          - set -e
 
-         - touch foo.obj
+         - mkdir build
+         - mkdir CMakeFiles
+         - touch .DS_Store foo.d foo.doxygen.d foo.obj foo.foo.obj
+
          - git ls-files -o -i --exclude-standard > ignored.txt
 
          - diff ignored.txt tests/list-of-files-that-should-be-ignored.txt
