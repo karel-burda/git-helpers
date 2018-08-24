@@ -1,11 +1,6 @@
 stages:
   - test
 
-env:
-  global:
-    - IGNORE_LIST="./ignored.txt"
-    - IGNORE_LIST_REFERENCE="./tests/list-of-files-that-should-be-ignored.txt"
-
 notifications:
   email:
     on_success: never
@@ -22,6 +17,7 @@ jobs:
          - set -e
 
          - pushd tests
+         - ls -la
          - ./run-all-tests.sh
 
          - set +e
