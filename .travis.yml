@@ -21,6 +21,6 @@ jobs:
        script:
          - set -e
 
-         - run-all-tests.sh
+         - ./tests/run-all-tests.sh
 
          - set +e
