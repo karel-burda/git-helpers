@@ -1,7 +1,0 @@
-.DS_Store
-build/foo.txt
-CMakeFiles/foo.cmake
-foo.d
-foo.doxygen.d
-foo.foo.obj
-foo.obj
