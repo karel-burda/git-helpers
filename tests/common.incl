@@ -1,0 +1,15 @@
+function assert_whether_file_exists
+{
+    local readonly FILE_PATH=$1
+    local readonly EXIT_CODE_ON_ERROR=$2
+
+    [ -f $FILE_PATH ] || (>&2 echo "file $FILE_PATH must exist" && exit $EXIT_CODE_ON_ERROR)
+}
+
+function assert_whether_file_empty
+{
+    local readonly FILE_PATH=$1
+    local readonly EXIT_CODE_ON_ERROR=$2
+
+    [ -s $FILE_PATH ] || (>&2 echo "file $FILE_PATH cannot be empty" && exit $EXIT_CODE_ON_ERROR)
+}
