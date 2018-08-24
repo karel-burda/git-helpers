@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -xe
+set -e
 
 source $(dirname $0)/common.incl
 
@@ -37,4 +37,4 @@ function test
 
 test
 
-set +xe
+set +e

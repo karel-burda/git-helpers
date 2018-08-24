@@ -16,8 +16,6 @@ jobs:
        script:
          - set -e
 
-         - pushd tests
-         - ls -la
-         - ./run-all-tests.sh
+         - ./tests/run-all-tests.sh
 
          - set +e
