@@ -6,9 +6,9 @@ source $(dirname $0)/common.incl
 
 function assert_git_status_output
 {
-    readonly EXIT_CODE_ON_ERROR=$1
-    readonly IGNORE_LIST="git-ignore-output.txt"
-    readonly IGNORE_LIST_REFERENCE="$(dirname $0)/list-of-files-that-should-be-ignored.txt"
+    local readonly EXIT_CODE_ON_ERROR=$1
+    local readonly IGNORE_LIST="git-ignore-output.txt"
+    local readonly IGNORE_LIST_REFERENCE="$(dirname $0)/list-of-files-that-should-be-ignored.txt"
 
     mkdir -p build/a/b/c CMakeFiles
     touch build/foo.txt CMakeFiles/foo.cmake
@@ -26,7 +26,7 @@ function assert_git_status_output
 
 function test
 {
-    readonly PATH_TO_GITIGNORE="$(dirname $0)/../.gitignore"
+    local readonly PATH_TO_GITIGNORE="$(dirname $0)/../.gitignore"
 
     assert_whether_file_exists $PATH_TO_GITIGNORE 1
     assert_whether_file_empty $PATH_TO_GITIGNORE 2
