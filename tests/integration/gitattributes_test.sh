@@ -2,7 +2,7 @@
 
 set -e
 
-source "$(dirname "$0")/common.incl"
+source "$(dirname "$0")/include/common.incl"
 
 
 function test
