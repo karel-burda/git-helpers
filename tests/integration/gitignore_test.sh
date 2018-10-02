@@ -8,7 +8,7 @@ function assert_git_status_output
 {
     local -r EXIT_CODE_ON_ERROR=$1
     local -r IGNORE_LIST="git-ignore-output.txt"
-    local -r IGNORE_LIST_REFERENCE="$(dirname "$0")/list-of-files-that-should-be-ignored.txt"
+    local -r IGNORE_LIST_REFERENCE="$(dirname "$0")/resources/list-of-files-that-should-be-ignored.txt"
 
     mkdir -p build/a/b/c CMakeFiles
     touch build/foo.txt CMakeFiles/foo.cmake
@@ -26,7 +26,7 @@ function assert_git_status_output
 
 function test
 {
-    local -r PATH_TO_GITIGNORE="$(dirname "$0")/../.gitignore"
+    local -r PATH_TO_GITIGNORE="$(dirname "$0")/../../.gitignore"
 
     assert_whether_file_exists "$PATH_TO_GITIGNORE" 1
     assert_whether_file_empty "$PATH_TO_GITIGNORE" 2

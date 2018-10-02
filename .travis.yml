@@ -1,13 +1,6 @@
 stages:
   - test
 
-notifications:
-  email:
-    on_success: never
-    on_failure: always
-    recipients:
-      - karelburda89@gmail.com
-
 jobs:
   include:
      - stage: test
