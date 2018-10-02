@@ -13,6 +13,9 @@ jobs:
        script:
          - set -e
 
-         - ./tests/integration/run-all-tests.sh
+         - pushd tests/integration
+         - shellcheck run-all-tests.sh gitignore_test.sh gitattributes_test.sh
+
+         - ./run-all-tests.sh
 
          - set +e
