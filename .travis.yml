@@ -13,6 +13,6 @@ jobs:
        script:
          - set -e
 
-         - ./tests/run-all-tests.sh
+         - ./tests/integration/run-all-tests.sh
 
          - set +e
