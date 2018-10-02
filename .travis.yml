@@ -14,7 +14,7 @@ jobs:
          - set -e
 
          - pushd tests/integration
-         - shellcheck run-all-tests.sh gitignore_test.sh gitattributes_test.sh
+         - shellcheck source=./include shell=bash run-all-tests.sh gitignore_test.sh gitattributes_test.sh
 
          - ./run-all-tests.sh
 
