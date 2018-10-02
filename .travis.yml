@@ -1,21 +1,21 @@
 stages:
   - test
 
-notifications:
-  email:
-    on_success: never
-    on_failure: always
-    recipients:
-      - karelburda89@gmail.com
-
 jobs:
   include:
      - stage: test
        dist: trusty
        os: linux
+       addons:
+         apt:
+           packages:
+             - shellcheck
        script:
          - set -e
 
-         - ./tests/run-all-tests.sh
+         - pushd tests/integration
+         - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
+
+         - ./run-all-tests.sh
 
          - set +e
