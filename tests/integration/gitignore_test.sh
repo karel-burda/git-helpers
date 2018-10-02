@@ -2,6 +2,7 @@
 
 set -e
 
+# shellcheck source=include
 source "$(dirname "$0")/include/common.incl"
 
 function assert_git_status_output
