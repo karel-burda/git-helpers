@@ -6,6 +6,10 @@ jobs:
      - stage: test
        dist: trusty
        os: linux
+       addons:
+         apt:
+           packages:
+             - shellcheck
        script:
          - set -e
 
