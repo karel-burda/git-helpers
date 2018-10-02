@@ -5,5 +5,7 @@
 # Introduction
 Common git-related files intended for my projects.
 
-# Tests
+# Continuous Integration
 Automatic tests are being run as part of the CI, see [tests](tests/integration) that are used in the [.travis.yml](.travis.yml).
+
+Static analysis is performed on the testing bash scripts using [ShellCheck](https://github.com/koalaman/shellcheck).
