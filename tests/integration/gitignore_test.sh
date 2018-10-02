@@ -18,9 +18,6 @@ function assert_git_status_output
     sort -o "$IGNORE_LIST" "$IGNORE_LIST"
     sort -o "$IGNORE_LIST_REFERENCE" "$IGNORE_LIST_REFERENCE"
 
-    cat "$IGNORE_LIST"
-    cat "$IGNORE_LIST_REFERENCE"
-
     diff "$IGNORE_LIST" "$IGNORE_LIST_REFERENCE" || (>&2 echo "diffent output of ignored files than should be according to the template" && exit "$EXIT_CODE_ON_ERROR")
 }
 
