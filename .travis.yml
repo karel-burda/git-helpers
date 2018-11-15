@@ -1,9 +1,12 @@
 stages:
-  - test
+  - test -- linux, shellcheck
+
+git:
+  depth: 1
 
 jobs:
   include:
-     - stage: test
+     - stage: test -- linux, shellcheck
        dist: trusty
        os: linux
        addons:
@@ -14,8 +17,8 @@ jobs:
          - set -e
 
          - pushd tests/integration
-         - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
 
+         - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
          - ./run-all-tests.sh
 
          - set +e
