@@ -30,7 +30,7 @@ jobs:
          - set -e
 
          - pushd tests/integration
-         
+
          - ./run-all-tests.sh
 
          - set +e
