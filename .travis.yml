@@ -24,7 +24,7 @@ jobs:
 
          - set +e
 
-    - stage: test -- windows
+     - stage: test -- windows
        os: windows
        script:
          - set -e
