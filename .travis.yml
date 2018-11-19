@@ -1,5 +1,6 @@
 stages:
   - test -- linux, shellcheck
+  - test -- windows
 
 git:
   depth: 1
@@ -7,8 +8,8 @@ git:
 jobs:
   include:
      - stage: test -- linux, shellcheck
-       dist: trusty
        os: linux
+       dist: xenial
        addons:
          apt:
            packages:
@@ -19,6 +20,17 @@ jobs:
          - pushd tests/integration
 
          - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
+         - ./run-all-tests.sh
+
+         - set +e
+
+    - stage: test -- windows
+       os: windows
+       script:
+         - set -e
+
+         - pushd tests/integration
+
          - ./run-all-tests.sh
 
          - set +e
