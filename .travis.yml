@@ -10,6 +10,7 @@ jobs:
      - stage: test -- linux, shellcheck
        os: linux
        dist: xenial
+       language: generic
        addons:
          apt:
            packages:
@@ -26,6 +27,7 @@ jobs:
 
      - stage: test -- windows
        os: windows
+       language: generic
        script:
          - set -e
 
