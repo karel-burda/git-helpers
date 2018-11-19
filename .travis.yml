@@ -1,6 +1,5 @@
 stages:
   - test -- linux, shellcheck
-  - test -- windows
 
 git:
   depth: 1
@@ -21,18 +20,6 @@ jobs:
          - pushd tests/integration
 
          - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
-         - ./run-all-tests.sh
-
-         - set +e
-
-     - stage: test -- windows
-       os: windows
-       language: generic
-       script:
-         - set -e
-
-         - pushd tests/integration
-
          - ./run-all-tests.sh
 
          - set +e
