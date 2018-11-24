@@ -20,9 +20,21 @@ matrix:
 
          - set +e
 
+     - name: "tests -- osx"
+       os: osx
+       osx_image: xcode10.1
+       language: generic
+       script:
+         - set -e
+
+         - pushd tests/integration
+         - ./run-all-tests.sh
+
+         - set +e
+
      - name: "tests -- windows"
        os: windows
-       language: cpp
+       language: generic
        script:
          - set -e
 

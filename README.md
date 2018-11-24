@@ -12,4 +12,5 @@ Static analysis is performed on the testing bash scripts using [ShellCheck](http
 
 The project is using these jobs:
 * `tests -- linux, shellcheck`
+* `tests -- osx`
 * `tests -- windows`
