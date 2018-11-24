@@ -14,7 +14,7 @@ matrix:
        script:
          - set -e
 
-         - pushd tests/integration
+         - cd tests/integration
          - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
          - ./run-all-tests.sh
 
@@ -27,7 +27,7 @@ matrix:
        script:
          - set -e
 
-         - pushd tests/integration
+         - cd tests/integration
          - ./run-all-tests.sh
 
          - set +e
@@ -38,7 +38,7 @@ matrix:
        script:
          - set -e
 
-         - pushd tests/integration
+         - cd tests/integration
          - ./run-all-tests.sh
 
          - set +e
