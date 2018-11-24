@@ -27,8 +27,7 @@ matrix:
        script:
          - set -e
 
-         - cd tests/integration
-         - ./run-all-tests.sh
+         - ./tests/integration/run-all-tests.sh
 
          - set +e
 
@@ -38,7 +37,6 @@ matrix:
        script:
          - set -e
 
-         - cd tests/integration
-         - ./run-all-tests.sh
+         - ./tests/integration/run-all-tests.sh
 
          - set +e
