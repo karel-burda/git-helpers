@@ -1,12 +1,9 @@
-stages:
-  - test -- linux, shellcheck
-
 git:
   depth: 1
 
-jobs:
+matrix:
   include:
-     - stage: test -- linux, shellcheck
+     - name: "tests -- linux, shellcheck"
        os: linux
        dist: xenial
        language: generic
@@ -18,8 +15,18 @@ jobs:
          - set -e
 
          - pushd tests/integration
-
          - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
+         - ./run-all-tests.sh
+
+         - set +e
+
+     - name: "tests -- windows"
+       os: windows
+       language: cpp
+       script:
+         - set -e
+
+         - pushd tests/integration
          - ./run-all-tests.sh
 
          - set +e
