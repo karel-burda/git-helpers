@@ -33,7 +33,7 @@ matrix:
 
      - name: "tests -- windows"
        os: windows
-       language: generic
+       language: cpp
        script:
          - set -e
 
