@@ -1,14 +1,12 @@
-stages:
-  - test -- linux, shellcheck
-
 git:
   depth: 1
 
-jobs:
+matrix:
   include:
-     - stage: test -- linux, shellcheck
-       dist: trusty
+     - name: "tests -- linux, shellcheck"
        os: linux
+       dist: xenial
+       language: generic
        addons:
          apt:
            packages:
@@ -16,9 +14,30 @@ jobs:
        script:
          - set -e
 
-         - pushd tests/integration
-
+         - cd tests/integration
          - shellcheck --shell=bash --external-sources --exclude=SC1090 run-all-tests.sh gitignore_test.sh gitattributes_test.sh
          - ./run-all-tests.sh
+
+         - set +e
+
+     - name: "tests -- osx"
+       os: osx
+       osx_image: xcode10.1
+       language: generic
+       script:
+         - set -e
+
+         - ./tests/integration/run-all-tests.sh
+
+         - set +e
+
+     - name: "tests -- windows"
+       os: windows
+       # have to be set to the "cpp", otherwise the machine refuses to boot
+       language: cpp
+       script:
+         - set -e
+
+         - ./tests/integration/run-all-tests.sh
 
          - set +e

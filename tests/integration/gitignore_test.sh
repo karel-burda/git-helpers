@@ -23,6 +23,8 @@ function assert_git_status_output
 
 function test
 {
+    echo "Running $0"
+
     local -r PATH_TO_GITIGNORE="$(dirname "$0")/../../.gitignore"
 
     assert_whether_file_exists "$PATH_TO_GITIGNORE" 1
