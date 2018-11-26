@@ -33,6 +33,7 @@ matrix:
 
      - name: "tests -- windows"
        os: windows
+       # have to be set to the "cpp", otherwise the machine refuses to boot
        language: cpp
        script:
          - set -e
