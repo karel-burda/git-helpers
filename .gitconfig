@@ -1,0 +1,12 @@
+# Base template origin: https://github.com/karel-burda/git-helpers
+# Version: 0.5.0
+
+[user]
+    name = Karel Burda
+    email = karelburda89@gmail.com
+
+[color]
+    ui = true
+
+[push]
+    default = matching
