@@ -1,6 +1,6 @@
 ![Version](https://img.shields.io/badge/version-1.0.4-blue.svg)
 [![License](https://img.shields.io/badge/license-MIT_License-blue.svg?style=flat)](LICENSE)
-[![Build Status](https://travis-ci.org/karel-burda/git-helpers.svg?branch=develop)](https://travis-ci.org/karel-burda/git-helpers)
+[![Build Status](https://travis-ci.org/karel-burda/git-helpers.svg?branch=master)](https://travis-ci.org/karel-burda/git-helpers)
 
 ## Introduction
 Common git-related files intended for my projects.
