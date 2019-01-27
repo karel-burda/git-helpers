@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.4-blue.svg)
 [![License](https://img.shields.io/badge/license-MIT_License-blue.svg?style=flat)](LICENSE)
 [![Build Status](https://travis-ci.org/karel-burda/git-helpers.svg?branch=develop)](https://travis-ci.org/karel-burda/git-helpers)
 
